@@ -1,10 +1,11 @@
 var express = require("express");
+
 var server = express();
 var bodyParser = require("body-parser");
-
-var model = {};
+const api = require("./Routes/api");
 
 server.use(bodyParser.json());
-
+server.use("/api", api);
+server.post("api/");
 server.listen(3000);
-module.exports = { model, server };
+module.exports = { server };
